@@ -292,7 +292,12 @@ export function getAlpha2Code(name, lang) {
  * @return ISO 3166-1 alpha-2 or undefined
  */
 export function getSimpleAlpha2Code(name, lang) {
-  const normalizeString = (string) => removeDiacritics(string.toLowerCase());
+  const normalizeString = (string) =>
+    string
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+
   const areSimilar = (a, b) => normalizeString(a) === normalizeString(b);
 
   try {
