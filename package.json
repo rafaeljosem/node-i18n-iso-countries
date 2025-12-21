@@ -139,10 +139,10 @@
   "main": "entry-node",
   "browser": "index",
   "engines": {
-    "node": ">= 12"
+    "node": ">= 18.20.0"
   },
   "scripts": {
-    "test": "mocha test/*.js",
+    "test": "node --import ./test/register-json-loader.js ./node_modules/.bin/mocha test/iso-i18n-countries.js",
     "lint": "eslint **/*.js"
   },
   "bugs": {

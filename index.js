@@ -1,11 +1,7 @@
 "use strict";
 
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
-
-import { remove as removeDiacritics } from "diacritics";
-const codes = require("./codes.json");
-const supportedLocales = require("./supportedLocales.json");
+import codes from "./codes.json";
+import supportedLocales from "./supportedLocales.json";
 const registeredLocales = {};
 
 /*
