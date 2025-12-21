@@ -1,10 +1,15 @@
-var library = require("./index");
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
 
-var supportedLocales = library.getSupportedLanguages();
+import * as library from "./index.js";
+import { getSupportedLanguages, registerLocale } from "./index.js";
 
-for (var i = 0; i < supportedLocales.length; i++) {
-  var locale = require("./langs/" + supportedLocales[i] + ".json");
-  library.registerLocale(locale);
-}
+const supportedLocales = getSupportedLanguages();
 
-module.exports = library;
+supportedLocales.forEach((code) => {
+  const locale = require(`./langs/${code}.json`);
+  registerLocale(locale);
+});
+
+export * from "./index.js";
+export default library;
