@@ -1,6 +1,6 @@
 {
-  "name": "i18n-iso-countries",
-  "version": "7.14.0",
+  "name": "@rafaeljosem/i18n-iso-countries",
+  "version": "8.0.0",
   "type": "module",
   "description": "i18n for ISO 3166-1 country codes",
   "typings": "index.d.ts",
@@ -124,7 +124,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/michaelwittig/node-i18n-iso-countries.git"
+    "url": "https://github.com/rafaeljosem/node-i18n-iso-countries.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
     "eslint": "8.38.0",

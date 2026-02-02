@@ -17,9 +17,35 @@ import {
   langs,
   numericToAlpha2,
   numericToAlpha3,
+  registerLocale,
   toAlpha2,
   toAlpha3,
 } from "../entry-node.js";
+
+// Manually register locales needed for tests
+import de from "../langs/de.json" with { type: "json" };
+import el from "../langs/el.json" with { type: "json" };
+import en from "../langs/en.json" with { type: "json" };
+import fr from "../langs/fr.json" with { type: "json" };
+import id from "../langs/id.json" with { type: "json" };
+import mr from "../langs/mr.json" with { type: "json" };
+import mt from "../langs/mt.json" with { type: "json" };
+import nl from "../langs/nl.json" with { type: "json" };
+import pl from "../langs/pl.json" with { type: "json" };
+import pt from "../langs/pt.json" with { type: "json" };
+import vi from "../langs/vi.json" with { type: "json" };
+
+registerLocale(de);
+registerLocale(en);
+registerLocale(id);
+registerLocale(pl);
+registerLocale(el);
+registerLocale(fr);
+registerLocale(pt);
+registerLocale(vi);
+registerLocale(mr);
+registerLocale(mt);
+registerLocale(nl);
 
 describe("i18n for iso 3166-1", function () {
   "use strict";
